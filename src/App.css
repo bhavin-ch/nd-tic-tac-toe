@@ -1,38 +1,78 @@
-.App {
+/* Common */
+.in-row {
+  float: left;
+  display: grid;
+}
+/* Square */
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
   text-align: center;
+  width: 20px;
+  line-height: 20px;
+  height: 20px;
+  display: block;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  background-color: #bdbdbd;
+  margin: 4px;
+  border: 1px solid #7a7a7a;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  /* text-shadow: 0px -1px 0px rgba(0,0,0,.5);
+  background-image: linear-gradient(bottom, rgb(189,189,189) 0%, rgb(122,122,122) 100%);
+  background-image: -o-linear-gradient(bottom, rgb(189,189,189) 0%, rgb(122,122,122) 100%);
+  background-image: -moz-linear-gradient(bottom, rgb(189,189,189) 0%, rgb(122,122,122) 100%);
+  background-image: -webkit-linear-gradient(bottom, rgb(189,189,189) 0%, rgb(122,122,122) 100%);
+  background-image: -ms-linear-gradient(bottom, rgb(189,189,189) 0%, rgb(122,122,122) 100%);
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, rgb(189,189,189)),
+    color-stop(1, rgb(122,122,122))
+  );
+  -webkit-box-shadow: 0px 6px 0px #7a7a7a, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+  -moz-box-shadow: 0px 6px 0px #7a7a7a, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+  box-shadow: 0px 6px 0px #7a7a7a, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5); */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.square:focus {
+  outline: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Grid */
+.grid {
+  display: block;
+  overflow: auto;
+  border: 1px #000 solid;
+  margin: 2px;
+  padding: 2px;
+}
+.board-row {
+  display: block;
+  overflow: auto;
+}
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Game */
+.game {
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  /* transform: translate(-50%, -50%); */
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+  flex-direction: row;
+  margin: 0 auto;  
+ }
