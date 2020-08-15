@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import Square from './Square';
 import Grid from './Grid';
 
+/**
+ * Get coords for a given set of 1 or 2 dimensions. These should map to the original n-d array
+ * @param {NdArray} coords n-dimentional array of num-node
+ * @param {uint8} indices dimensions for which we need the coords
+ */
 const setCoords = (coords, indices) => {
   const index = coords.findIndex(c => c === -1);
   if (index === -1) return coords;
@@ -14,7 +19,6 @@ const getKey = coords => `(${coords.join(',')})`;
 const isLeaf = coords => (coords.findIndex(c => c === -1) === -1)
 
 class Board extends Component {
-
   render() {
     const shape = this.props.state.shape;
     const coords = shape.map(x => -1);

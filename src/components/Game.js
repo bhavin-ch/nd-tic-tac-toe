@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Board from './Board';
 import * as nj from 'numjs';
+import { calculateForSquare } from '../score-calculator';
 
 class Game extends Component {
   constructor(props) {
@@ -16,7 +17,10 @@ class Game extends Component {
     console.log('currLen');
     console.log(currLen);
     let newState = this.state.history[currLen];
-    newState.set(...coords, this.state.xNext ? 1 : 2);
+    newState.set(...coords, this.state.xNext ? 2 : 1);
+    console.log(`value at ${coords}`);
+    console.log(newState.get(...coords));
+    calculateForSquare(newState, coords, this.state.xNext);
     this.setState({
       history: this.state.history.concat(newState),
       xNext: !this.state.xNext,
