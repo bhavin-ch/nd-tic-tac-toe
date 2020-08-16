@@ -1,0 +1,1 @@
+export const isPresent = variable => (variable != null && typeof variable !== 'undefined');
