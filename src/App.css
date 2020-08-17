@@ -1,3 +1,6 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~bootstrap/dist/css/bootstrap-grid.css';
+
 /* Common */
 .in-row {
   float: left;
@@ -5,43 +8,26 @@
 }
 /* Square */
 .square {
-  background: #fff;
-  border: 1px solid #999;
-  font-size: 12px;
+  font-size: 18px;
+  font-family: 'Gloria Hallelujah', cursive;
   font-weight: bold;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 20px;
-  line-height: 20px;
-  height: 20px;
+  width: 30px;
+  line-height: 30px;
+  height: 30px;
   display: block;
   text-decoration: none;
   color: #000;
   font-weight: bold;
-  background-color: #bdbdbd;
+  background-color: #e8e8e8;
   margin: 4px;
-  border: 1px solid #7a7a7a;
+  border: 1px solid #a1a1a1;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  /* text-shadow: 0px -1px 0px rgba(0,0,0,.5);
-  background-image: linear-gradient(bottom, rgb(189,189,189) 0%, rgb(122,122,122) 100%);
-  background-image: -o-linear-gradient(bottom, rgb(189,189,189) 0%, rgb(122,122,122) 100%);
-  background-image: -moz-linear-gradient(bottom, rgb(189,189,189) 0%, rgb(122,122,122) 100%);
-  background-image: -webkit-linear-gradient(bottom, rgb(189,189,189) 0%, rgb(122,122,122) 100%);
-  background-image: -ms-linear-gradient(bottom, rgb(189,189,189) 0%, rgb(122,122,122) 100%);
-  background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0, rgb(189,189,189)),
-    color-stop(1, rgb(122,122,122))
-  );
-  -webkit-box-shadow: 0px 6px 0px #7a7a7a, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-  -moz-box-shadow: 0px 6px 0px #7a7a7a, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-  box-shadow: 0px 6px 0px #7a7a7a, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5); */
 }
 
 .square:focus {
@@ -52,27 +38,100 @@
 .grid {
   display: block;
   overflow: auto;
-  border: 1px #000 solid;
+  border: 1px #a1a1a1 solid;
   margin: 2px;
   padding: 2px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  height: max-content;
 }
 .board-row {
   display: block;
   overflow: auto;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 .board-row:after {
   clear: both;
   content: "";
   display: table;
 }
-
-/* Game */
-.game {
-  position: absolute;
+.grid-wrapper {
+  /* position: absolute; */
   top: 1%;
   left: 1%;
-  /* transform: translate(-50%, -50%); */
+  /* transform: translate(30%, 30%); */
   display: flex;
   flex-direction: row;
   margin: 0 auto;  
- }
+}
+
+/* Game */
+.score-board {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;  
+}
+
+/* Sidebar */
+#wrapper {
+  overflow-x: hidden;
+  flex-direction: row;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+
+.score-rows {
+  flex-direction: column;
+  display: flex;
+  overflow-x: hidden;
+}
+.score-row {
+  width: auto;
+}

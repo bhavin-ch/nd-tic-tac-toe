@@ -6,7 +6,7 @@ export default function Square(props) {
   if (props.value === 2) display = 'X';
   return (
     <button className="square" onClick={props.onClick}>
-      {display}
+      <b class="font-weight-bold" className={props.value === 2 ? 'text-primary' : 'text-success'}>{display}</b>
     </button>
   )
 }

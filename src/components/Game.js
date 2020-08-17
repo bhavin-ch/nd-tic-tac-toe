@@ -11,6 +11,7 @@ class Game extends Component {
       xNext: true,
       stepNum: 0,
       history: [nj.zeros([3,3,3,3], 'uint8')],
+      // history: [nj.zeros([4,4,4,4], 'uint8')],
       scoreboard: []
     }
   }
@@ -38,9 +39,12 @@ class Game extends Component {
     const history = this.state.history;
     const current = history[history.length - 1];
     return (
-      <div className="game">
-        <Board onClick={(coords) => this.handleClick(coords)} state={current} />
-        <ScoreBoard scoreboard={this.state.scoreboard}></ScoreBoard>
+      // <div className="game">
+      <div class="d-flex sidebar-wrapper" id="wrapper">
+        <ScoreBoard scoreboard={this.state.scoreboard} xNext={this.state.xNext}></ScoreBoard>
+        <div className="grid-wrapper">
+          <Board onClick={(coords) => this.handleClick(coords)} state={current} />
+        </div>
       </div>
     );
   }

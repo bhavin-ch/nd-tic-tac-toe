@@ -107,6 +107,7 @@ export const calculateScoreForSquare = (grid, coord, scoreboard, isX, stepNum) =
   const dirs = directions || setDirections(ndims);
   const D = getGridDepth(grid);
   // console.log(dirs.map(d => `(${d.join(',')})`));
+  let coords = [];
   for (const [index, direction] of dirs.entries()) {
     const dirEmojis = ['↓', '·', '↑'];
     // console.log(direction.map(d => dirEmojis[d + 1]).join(' '));
@@ -121,9 +122,10 @@ export const calculateScoreForSquare = (grid, coord, scoreboard, isX, stepNum) =
       console.log('#########################');
       console.log(`found a score for (${coord.join(',')}) at (${newStart.join(',')}) -> (${end.join(',')}) with grad (${direction.join(',')})`);
       console.log('#########################');
-      const coords = getLineCoords(grid, newStart, end, direction, D);
-      console.log(coords);
-      scoreboard.push({ stepNum, isX, coords });
+      const lineCoords = getLineCoords(grid, newStart, end, direction, D);
+      console.log(lineCoords);
+      coords.push(lineCoords);
     }
   }
+  if (coords.length !== 0) scoreboard.push({ stepNum, isX, count: coords.length, coords });
 }
