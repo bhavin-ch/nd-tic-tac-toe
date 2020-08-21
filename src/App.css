@@ -1,5 +1,6 @@
 @import '~bootstrap/dist/css/bootstrap.css';
 @import '~bootstrap/dist/css/bootstrap-grid.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 /* Common */
 .in-row {
@@ -134,4 +135,49 @@
 }
 .score-row {
   width: auto;
+}
+
+.modal{
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background:rgba(255, 255, 255, 0.95);
+  z-index: 9;
+  font-family: 'Roboto', sans-serif;
+}
+
+.modal-title{
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 1rem;
+  font-family: inherit;
+}
+
+.modal-subtitle{
+  font-size: 1rem;
+  font-family:'ModalFont';
+  margin-bottom: 3rem;
+  color: #757575;
+}
+
+.btns {
+  padding: 0.6rem 1rem;
+  font-family: 'ModalSubtFont';
+  border-radius: 4px;
+  font-size: 1rem;
+  margin:0.3rem
+}
+.action-btn{
+  color:#FFF;
+  background-color:#54cc5a;
+  border: 1px solid #54cc5a;
+}
+.dismiss-btn{
+  color:#292929;
+  background-color:transparent;
+  border: 1px solid #292929;
 }

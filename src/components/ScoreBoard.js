@@ -41,7 +41,8 @@ class ScoreBoard extends Component {
           <div class="score-rows">
             {scoreboard.reverse().map(s => {
               return (
-                <a href="#" class="list-group-item list-group-item-action bg-light row score-row">
+                <a class="list-group-item list-group-item-action bg-light row score-row"
+                  onMouseDown={() => this.props.onMouseDown(s)} onMouseUp={() => this.props.onMouseUp()}>
                   <div class="col" style={{fontSize: 'small', margin: 'inherit'}}>STEP {s.stepNum}</div>
                   <div class="col">{s.isX ? 'X' : 'O'}</div>
                   <div class="col" className={s.isX ? 'text-primary' : 'text-success'}>{s.count} points</div>

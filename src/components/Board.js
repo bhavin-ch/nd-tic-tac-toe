@@ -27,10 +27,9 @@ class Board extends Component {
       return <Grid isSingle={isSingle} state={this.props.state} key={getKey(coords)} child={(i, j) => {
         const newCoords = setCoords(coords, isSingle ? [i] : [i, j]);
         return isLeaf(newCoords) ? 
-        <Square value={this.props.state.get(...newCoords)} key={getKey(newCoords)} onClick={() => this.props.onClick(newCoords)}/>
-        :
-        builder(newCoords);
-      }}/>
+        <Square highlight={this.props.highlight} onClick={() => this.props.onClick(newCoords)}
+          value={this.props.state.get(...newCoords)} coord={newCoords} key={getKey(newCoords)} /> : builder(newCoords);
+      }} />
     }
     return builder(coords);
   }
