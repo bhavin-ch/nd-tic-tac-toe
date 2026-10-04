@@ -42,7 +42,9 @@ const setDirections = (ndims) => {
       .map(k => k===2 ? -1 : k); // map 2 to -1 (to denote decreasing)
     ans.push(direction);
   }
+  console.log('setDirections -> ans', ans);
   const finalAns = ignoreMirrorDirections(ans);
+  console.log('setDirections -> finalAns', finalAns);
   directions = finalAns;
   return directions;
 }

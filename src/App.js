@@ -22,7 +22,7 @@ class App extends Component {
   }
   setParams (n, d) {
     this.setState({ n, d });
-    this.boardParams = new Array(n).fill(d)
+    this.boardParams = new Array(n).fill(d);
     console.log(this.boardParams);
     this.forceUpdate()
   }

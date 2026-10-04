@@ -44,6 +44,8 @@ class Game extends Component {
     this.forceUpdate()
   }
   handleClick (coords) {
+    console.log('handleClick -> coords', coords);
+    console.log('handleClick -> history', this.state.history);
     const currLen = this.state.history.length - 1;
     // console.log('currLen');
     // console.log(currLen);
